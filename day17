@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        console.log("TASK 1--------------") 
+        
+        let fact=1;
+        let n=parseInt(prompt("Enter The Value:"));
+        for(let i=n;i>=1;i--){
+            fact=fact*i;
+        }
+        console.log("The factorial of " + n + ":" +fact);
+        
+        console.log("TASK 2---------------") 
+
+        let count=0;
+        let n3=7;
+        for(let i=0;i<=n3;i++){
+        if(n3%i==0){
+        count++
+        }
+        }
+        if(count==2 ){
+        console.log("it is a prime number")
+        }
+        else{
+        console.log(" it is not a prime number")
+        }
+
+        console.log("Task 3----------------")
+
+        for (let n = 2; n <= 50; n++) {
+            let count = 0;
+            for (let i = 1; i <= n; i++) {
+                if (n % i === 0) {
+                    count++;
+                }
+            }
+            if (count === 2) {
+            console.log(n);
+            }
+        }
+
+        console.log("Task 4------------------")
+
+        let n4= prompt("Enter a value:");
+        let sum=0;
+        let r;
+        let temp =n4;
+        for(let i=1;i<=temp;){
+            r=temp%10;
+            sum+=r*r*r;
+            temp=parseInt(temp/10);
+        }
+        if(n4==sum){
+        console.log("its armstrong number")
+        }
+        else{
+        console.log("its is not a armstrong number")
+        }
+
+        console.log("Task 5---------------------")
+
+        for (let n = 1; n <= 500; n++) {
+            let temp = n;
+            let sum = 0;
+
+            while (temp > 0) {
+                let r = temp % 10;
+                sum += r*r*r;
+                temp = parseInt(temp / 10);
+            }
+
+            if (sum === n) {
+                 console.log(n);
+            }
+        }
+
+        console.log("Task 6----------------------")
+
+        let num1=0, num2=1;
+        console.log(num1);
+        console.log(num2);
+        for(let i=3;i<=10;i++){
+            let num3=num1+num2;
+            console.log(num3);
+            num1=num2;
+            num2=num3;
+        }
+
+        console.log("Task 7--------------------------")
+
+        let number = 10;
+        for(let i=1;i<=10;i++){
+            console.log(number + " x " + i + " = " +(number*i))
+        }
+
+        console.log("Task 8---------------------------")
+
+        let n5=123;
+        let sum1=0; 
+        while(n5>0){
+            let r =n5%10;
+            sum1=sum1+r
+            n5=parseInt(n5/10);
+        }
+        console.log("Sum of digits:",sum1);
+
+
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
