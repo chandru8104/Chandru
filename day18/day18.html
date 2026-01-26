@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        console.log("Task 1")---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        // without parameters
+        function fact1(){
+            let n=5
+            let fact=1;
+            for(let i=1;i<=n;i++){
+            fact=fact*i;
+            }
+            console.log("The factorial of " + n + ":" +fact);
+        }
+        fact1()
+        // return parameter
+        function fact3(){
+            let n = 6
+            let fact=1;
+             for(let i=1;i<=n;i++){
+            fact=fact*i;
+            }
+            return fact
+        }
+        console.log("the factorial of 6 is :",fact3());
+        // with parameters
+        function fact2(n){
+        let fact=1;
+        for(let i=1;i<=n;i++){
+            fact=fact*i;
+        }
+        console.log("The factorial of " + n + ":" +fact);
+        }
+        let num = prompt("Enter the value:");
+        fact2(num)
+
+        console.log("Task 2")--------------------------------------------------------------------------------------------------------------------------------------------------------------
+        // without parameters
+        function prime(){
+        let n=5;
+        let count=0;
+        for(let i=0;i<=n;i++){
+            if(n%i==0){
+                count++
+            }
+        }
+        if(count==2 ){
+        console.log("it is a prime number")
+        }
+        else{
+        console.log(" it is not a prime number")
+        }
+        }
+        prime()
+        // With parameters
+        function fact(n){
+        let isprime=true;
+            if(n<=1){
+            isprime=false;
+            }
+ -           for(let i=2;i<n;i++){
+            if(n%i==0){
+            isprime=false;
+            }
+            }           
+            console.log(isprime? "its prime no" : "its not an prime no")
+            }
+            fact(11)
+            
+            console.log("Task 3")--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+        // without parameters
+
+        function primeseries(){
+        for (let n = 2; n <= 25; n++) {
+            let prime = true;
+            for (let i = 2; i < n; i++) {
+            if (n % i === 0) {
+              prime = false;
+                break;
+            }
+            }
+            if (prime){
+             console.log(n);
+            }
+        }
+        }
+        primeseries();
+
+        // with parameters
+         let n = parseInt(prompt("Enter the number:"));
+        function primeSeries(num) {
+            console.log("with parametrs")
+        let i = 2;   
+        while (i <= num) {
+            let isPrime = true;
+            for (let j = 2; j < i; j++) {
+            if (i % j === 0) {
+                isPrime = false;
+                break;
+            }
+            }
+            if (isPrime) {
+            console.log(i);
+            }
+        i++;
+        }
+        }
+        primeSeries(n);
+
+        console.log("Task 4")----------------------------------------------------------------------------------------------------------------------------------------------------------------
+        // with parameters
+        function amstrong1(num){
+            let temp = num;
+            let sum = 0;
+
+            while (temp > 0) {
+            let r = temp % 10;
+            sum += r*r*r;
+            temp = parseInt(temp / 10);
+            }
+            console.log(sum === n1 ? "Armstrong" : "Not Armstrong");
+        }
+        let n1=Number(prompt(" ENTER THE VALUVE:"))
+        amstrong1(n1)
+
+        // without parameters
+        function amstrong(){
+            let num1=370;
+            let temp = num1;
+            let sum = 0;
+
+            while (temp > 0) {
+            let r = temp % 10;
+            sum += r*r*r;
+            temp = parseInt(temp / 10)
+            }
+            console.log(sum === num1 ? "Armstrong" : "Not Armstrong");
+        }
+        amstrong()
+
+        console.log("Task 5")---------------------------------------------------------------------------------------------------------------------------------------------------------------
+        // without parameters
+        function amrstrongSeries1(){
+        for (let n = 1; n <= 1000; n++) {
+        let temp = n;
+        let sum = 0;
+        while (temp > 0) {
+            let r = temp % 10;
+            sum += r*r*r;
+            temp = parseInt(temp / 10)
+        }
+        if (sum === n){
+            console.log(n);
+        }
+        }
+        }
+        amrstrongSeries1();
+        // with parameters
+        function amrstrongSeries(num){
+            console.log("with parameters")
+        for (let n = 1; n <= num; n++) {
+        let temp = n;
+        let sum = 0;
+        while (temp > 0) {
+            let r = temp % 10;
+            sum += r*r*r;
+            temp = parseInt(temp / 10)
+        }
+        if (sum === n){
+            console.log(n);
+        }
+        }
+        }
+        amrstrongSeries(1000);
+
+        console.log("Task 6")-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+        // without parameters
+        function fibbonacci1(){
+            let num1=0, num2=1;
+        console.log(num1);
+        console.log(num2);
+        for(let i=3;i<=10;i++){
+            let num3=num1+num2;
+            console.log(num3);
+            num1=num2;
+            num2=num3;
+        }
+        }
+        fibbonacci1()
+
+        // with parameters
+
+        function fibbonacci(series){
+             console.log("with parameters")
+            let num1=0, num2=1;
+        console.log(num1);
+        console.log(num2);
+        for(let i=3;i<=series;i++){
+            let num3=num1+num2;
+            console.log(num3);
+            num1=num2;
+            num2=num3;
+        }
+        }
+        fibbonacci(12)
+
+        console.log("Task 7")------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        // without parameters
+        function table1(){
+        let number = 10;
+        for(let i=1;i<=10;i++){
+            console.log(number + " x " + i + " = " +(number*i))
+        }
+        }
+        table1()
+        // with parameters
+        function table(tab){
+        console.log("with parameters")
+        let number = 12;
+        for(let i=1;i<=tab;i++){
+            console.log(number + " x " + i + " = " +(number*i))
+        }
+        }
+        table(12)
+
+        console.log("Task 8")----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        // without parameters
+        function SOS(){
+            let n5=123;
+        let sum1=0; 
+        while(n5>0){
+            let r =n5%10;
+            sum1=sum1+r
+            n5=parseInt(n5/10);
+        }
+        console.log("Sum of digits:",sum1);
+        }
+        SOS()
+        // WITH PARAMETERS
+        function SOS1(n6){
+        let sum1=0; 
+        while(n6>0){
+            let r =n6%10;
+            sum1=sum1+r
+            n6=parseInt(n6/10);
+        }
+        console.log("Sum of digits:",sum1);
+        }SOS1(1459)
+    </script>
+</head>
+<body>
+    welcome to js
+</body>
+</html>
