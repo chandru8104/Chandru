@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+       console.log("TASK 1")  
+    //    arrow function
+    let n = parseInt(prompt("enter your number : "));
+    let factorial = (number)=>{
+    let fact = 1;
+    for (let i = 1; i <= number; i++) {
+     fact = fact * i;
+        }
+    console.log(fact);
+    }
+    factorial(n);
+
+
+    console.log("Task 2")
+    //  arrow function
+    let primeOrNot = ()=>{
+        let num = 7;
+        let isPrime = true;
+        if (num <= 1) isPrime = false;
+        for (let i = 2; i < num; i++) {
+         if (num % i === 0) {
+          isPrime = false;
+               break;
+         }
+        }
+        console.log(isPrime ? "Prime" : "Not Prime");
+         }
+       primeOrNot();
+       
+
+    console.log("Task 3") 
+    // arrow function
+            let n1 = Number(prompt("enter the number:"));
+        let amstrong = (num)=>{
+            let temp = num;
+            let sum = 0;
+            while (temp > 0) {
+            let r = temp % 10;
+            sum +=r*r*r;
+            temp = parseInt(temp / 10);
+            }
+            console.log(sum === num ? "Armstrong" : "Not Armstrong");
+        }
+        amstrong(n1)
+
+       console.log("Task 4") 
+    //   arrow function
+        let n3 = Number(prompt("enter the number:"));
+         let table = (num)=>{
+                for (let i = 1; i <= 10; i++) {
+                console.log(num + " * " + i + " = " + (i * num));
+                }
+            }
+            table(n3);
+
+        console.log("Task 5") 
+        // arrow function
+            let n4 = parseInt(prompt("enter the number"));
+            let sum = (n)=>{
+                let sum = 0;
+                while (n > 0) {
+                sum += n % 10;
+                n = parseInt(n / 10);
+                }
+                console.log("Sum of digits:", sum);
+            }
+            sum(n4);
+        
+            console.log("Task 6")
+            //  arrow function
+             let string = prompt("Enter the words to palindrome:")
+            let palindrome = (str)=>{
+                   let answer = str.split("").reverse().join("");
+                   console.log(str === answer ? "palindrome":"not palindrome");
+            }
+           palindrome(string);
+           palindrome("BOB");
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
