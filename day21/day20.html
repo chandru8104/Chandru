@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        console.log("TASK 1")
+        let a=[22,34,65,76,89]; //push-- its adds the specific elements at the end of array...
+        a.push(92)
+        a.push(98)
+        a.push(104)
+        console.log(a)
+        let b=[22,34,65,76,89]; //pop-- its removes an element from the end of an array...
+        b.pop()
+        b.pop()
+        console.log(b)
+        let c=['c','h','a','n','d','r','u'] //shift--- it removes the first element from the array and all the other elements moves front of array list
+        c.shift()
+        c.shift()
+        console.log(c)
+        let d=['c','h','a','n','d','r','u'] //unshift -- it add the new element in the front of an array and all the array elements moves back for the new element
+        d.unshift('k')
+        console.log(d)
+
+        console.log("TASK 2")
+        let arr=[11,22,33,44,55,66,77,88,99,111]
+        for(let i=0;i<=arr.length-1;i++){
+            console.log(arr[i]); //arr[i]--- i is the index value and arr[i] it gets the elements from the array by the index value & print them
+        }
+
+        console.log("TASK 3")
+        let set=[1,2,3,4,5,6,7,8,9,10]
+        const doubled=set.map(n=>n*2);
+        console.log(doubled);
+
+        console.log("TASK 4")
+        let number=[11,22,33,44,55,66,77,88,99,110]
+        const even=number.filter(n=>n%2==0)
+        console.log(even)
+
+        console.log("TASK 5")
+        let set1=[10,20,30,40,50,60,70,80,90]
+        const sum=set1.reduce((total,n)=>total+n); //reduce((accumulator,current))
+        console.log(sum)
+
+        console.log("TASK 6")
+        let set2=[7,10,15,25,34]
+        const greater=set2.find(n=>n>10);
+        console.log(greater);
+
+        console.log("TASK 7")
+        let set3=['c','h','a','n',55,66,77,88,99,110]
+        console.log(set3.includes('d'));
+        console.log(set3.includes('c'));
+        console.log(set3.includes(99));
+        
+    </script>
+</head>
+<body>
+    <h1>welcome to the javascript</h1>
+</body>
+</html>
