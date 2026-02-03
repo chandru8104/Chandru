@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        console.log("TASK 1------------------------------------")
+        //REMOVE DUPLICATES
+        const remdup=arr=>[...new Set(arr)];
+        console.log(remdup([1,2,1,2,3,3,3,4,5]));
+        console.log("Task 2-----------------------------------")
+        //second largest
+        const secondlarge = arr=>[...new Set(arr)].sort((a,b)=> b - a)[1];
+        console.log(secondlarge([10,20,15,35,50,25]));
+        console.log("TASK 3-----------------------------------")
+        //check if 2 trings are anagrams
+        const anagram = (str1,str2)=>str1.split('').sort().join('')===str2.split('').sort().join('');
+        console.log(anagram("heart","earth"));
+        console.log("TASK 4-----------------------------------")
+        //count occurances
+        const ctrocc = arr=>arr.reduce((char1,char2)=>{
+            char1[char2]=(char1[char2]|| 0)+1;
+            return char1;
+        },{});
+        console.log(ctrocc(["a","b","a","b","c","d","a"]))
+        console.log("TASK 5-----------------------------------")
+        //factorial using recursion
+        const fact = n => (n === 0 ? 1 : n * fact(n - 1));
+        console.log(fact(5));
+        console.log("TASK 6-----------------------------------")
+        //avg marks
+        const avg = m =>m.reduce((total, m1) => total + m1, 0) / m.length;
+        console.log(avg([80, 75, 90, 85,89]));
+        console.log("TASK 7-----------------------------------")
+        //missing value
+        const fM = arr => {
+        const n = arr.length + 1;
+        const total = (n * (n + 1)) / 2;
+        const sum = arr.reduce((a, b) => a + b, 0);
+        return total - sum;}
+        console.log(fM([1,2,3,4,5,7]));
+        console.log("TASK 8-----------------------------------")
+        //longest sentence
+        const lw=s=>s.split(" ").reduce((l,w)=>w.length>l.length?w:l);
+        console.log(lw("javascript Arrays & Arrow Functions Programs"))
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
