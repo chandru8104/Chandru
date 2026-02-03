@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h4>Task 1</h4>
+    <p id="change">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    <button onclick="element()">click me!</button><hr>
+    <h4>Task 2</h4>
+    <div id="color" style="background-color: bisque; height: 20vh; text-align: center; " >CHANGE COLOR</div><br>
+    <button onclick="bgcolor()">change</button><hr>
+    <h4>Task 3</h4>
+    <p id="text">This is a paragraph</p>
+    <button onclick="hide()">hide</button>
+    <button onclick="show()">show</button><hr>
+    <h4>Task 4</h4>
+    <img id="img" src="logo.webp" width="200px"><br>
+    <button onclick="image()">change image</button><hr>
+    <h4>Task 5</h4>
+    <input type="text" id="box" placeholder="Enter your Name">
+    <button onclick="take()">Click here</button>
+    <p>Your name is <span id="span"></span></p><hr>
+    <h4>Task 6</h4>
+    <p id="newp">This is current paragraph</p>
+    <button onclick="display()">new paragraph</button><hr>
+    <h4>Task 7</h4>
+    <p id="DOM">This is DOM in javascript</p>
+    <button onclick="changetext()">change color</button><hr>
+    <h4>Task 8</h4>
+    <p id="para">OLD content</p>
+    <button onclick="changecontent()">click to change</button><hr>
+    <h4>Task 9</h4>
+    <p id="stylecon">STYLE content</p>
+    <button onclick="styletext()">change styletext</button>
+    <script>
+        // TASK 1
+        function element(){
+        document.getElementById("change").innerText = "CHANGED PARAGRAPH!!";}
+
+        // TASK 2
+        function bgcolor(){
+        document.getElementById("color").style.background ="yellow";}
+
+        // TASK 3
+        function hide(){
+        document.getElementById("text").style.display = "none";}
+        function show(){
+        document.getElementById("text").style.display ="block";}
+
+        // TASK 4
+        function image(){
+        document.getElementById("img").src ="hyundai.jpeg";}
+
+        // TASK 5
+        function take(){
+        let value = document.getElementById("box").value;
+        document.getElementById("span").innerText =value;}
+
+        // TASK 6
+        function display(){
+        document.getElementById("newp").innerText = "this is new paragraph";}
+
+        // TASK 7
+        function changetext(){
+        document.getElementById("DOM").style.color ="red";}
+
+        // TASK 8
+        function changecontent(){
+        document.getElementById("para").innerText="NEW content";}
+
+        // TASK 9
+        function styletext(){
+        let p = document.getElementById("stylecon");
+        p.style.color = "red";
+        p.style.fontSize = "50px";}
+    </script>
+</body>
+</html>
