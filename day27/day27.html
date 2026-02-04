@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log("TASK 1")
+        let arr =[10,20,30,40,50];
+        let [a, , , , e] = arr;
+        console.log(a);
+        console.log(e);
+        console.log("TASK 2")
+        let arr1 =[100,200,300]
+        let [f, ,l] = arr1;
+        console.log(f,l);
+        console.log("TASK 3")
+        let arr3=[1,2,3,4,5];
+        let [a1,...rest]=arr3;
+        console.log(a1,rest);
+        console.log("TASK 4")
+        let m1 =[1,2,3];
+        let m2 =[4,5,6];
+        console.log(...m1,...m2);
+        console.log("TASK 5")
+        let arr4=[10,20,30];
+        // let [para]=[arr4];
+        let arr5 = [...arr4] 
+        console.log(arr5);
+        console.log("TASK 6")
+        let product ={
+            id:1,
+            name: "Mobile",
+            price: 15000
+        };
+        let{name,price}= product;
+        console.log(name,price);
+        console.log("TASK 7")
+        let user = { name: "Raj", age: 25 };
+        let {name:fullname,age} = user;
+        console.log(fullname,age);
+
+        console.log("TASK 8")
+        let student = {
+            marks: {
+                math: 95,
+                science: 90
+            }
+        };
+        let{ marks:{ math ,science},} = student;
+        console.log( math );
+        console.log(science);
+        
+        console.log("TASK 9");
+        function show(obj){
+            console.log(obj.name,obj.age);
+        }
+        show({name:"chandru",age:21});
+
+        console.log("TASK 10");
+        let array =[10,20,30,40];
+        let[, , ...rests]=array;
+        array =[100,200,...rests];
+        console.log(array);
+    </script>
+</body>
+</html>
