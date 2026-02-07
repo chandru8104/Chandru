@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+            <h4>TASK 1</h4>
+            <!-- onclick attribute -->
+            <p id="a">show alert message:</p>
+            <button onclick="a()">try</button>
+            <!--onclick events -->
+            <p >display the alert msg</p>
+            <button id="a1">try it</button>
+            <p id="a2"></p><hr>
+
+            <h4>TASK 2</h4>
+            <p ondblclick="this.innerText='Text Changed!'">Double click this text</p><hr>
+
+            <h4>TASK 3</h4>
+            <div id="box"onmouseover="this.style.background='yellow'">this is ONMOUSEOVER </div><hr>
+
+            <H4>TASK 4</H4>
+            <div id="box1"onmouseout="this.style.background='lightgray'">this is ONMOUSEOUT</div><hr>
+
+            <h4>TASK 5</h4>
+            <input type="text" onkeydown="showChar(event)">
+            <p id="keyDown"></p><hr>
+
+            <H4>TASK 6</H4>
+            <input type="text" onkeyup="showValue(this.value)">
+            <p id="keyUp"></p><hr>
+
+            <h4>TASK 7</h4>
+            <form onsubmit="submitForm(event)">
+            <input type="text" id="name" placeholder="Enter name">
+            <button type="submit">Submit</button>
+            </form>
+            <p id="formData"></p><hr>
+
+            <H4>TASK 8</H4>
+            <select onchange="changeColor(this.value)">
+                <option value="">Select Color</option>
+                <option value="red">Red</option>
+                <option value="green">Green</option>
+                <option value="blue">Blue</option>
+            </select><hr>
+
+            <h4>TASK 9</h4>
+            <input type="text"
+                onfocus="this.style.border='5px solid yellow'"
+                onblur="this.style.border='2px solid red'"><hr>
+
+            <h4>TASK 10</h4>
+            <ul onclick="showItem(event)">
+                <li>Apple</li>
+                <li>Banana</li>
+                <li>Orange</li>
+            </ul>
+            <script>
+                // task 1
+                document.getElementById("a1").onclick=b;
+                function b(){document.getElementById("a2").value = alert("1alert msg is here")
+                }
+                function a(){
+                     document.getElementById("a").value = alert("alert msg is here");
+                        let value = alert("alert msg is here");
+                }
+                // TASK 5
+                function showChar(e) {
+                document.getElementById("keyDown").innerText = "Typed: " + e.key;}
+                // TASK 6
+                function showValue(val) {
+                document.getElementById("keyUp").innerText = "Value: " + val;
+                }
+                // TASK 7
+                function submitForm(e) {
+                e.preventDefault();
+                let name = document.getElementById("name").value;
+                document.getElementById("formData").innerText = "Submitted: " + name;
+                }
+                // TASK 8
+                function changeColor(color) {
+                document.body.style.background = color;
+                }
+                // TASK 10
+                function showItem(e) {
+                if (e.target.tagName === "LI") {
+                    alert(e.target.innerText);
+                }
+                }
+                </script>
+</body>
+</html>
