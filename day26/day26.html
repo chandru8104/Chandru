@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log("TASK 1")
+        class BankAccount {
+        #balance;
+        constructor(balance = 0) {
+        this.#balance = balance;
+        }
+        deposit(amount) {
+            if (amount > 0) 
+            this.#balance += amount;
+        }
+        withdraw(amount) {
+            if (amount > 0 && amount <= this.#balance) {
+                this.#balance -= amount;
+            } else {
+                console.log("Insufficient balance");
+            }
+        }
+        getBalance() {
+            return this.#balance;
+        }
+        }
+
+        let acc = new BankAccount(500);
+        acc.deposit(200);
+        acc.withdraw(100);
+        console.log("Bank Balance:", acc.getBalance());
+
+        console.log("TASK 2")
+        class User {
+        #password;
+        constructor(username, password) {
+            this.username = username;
+            this.#password = password;
+        }
+
+        changePassword(oldPwd, newPwd) {
+            if (oldPwd === this.#password) {
+                this.#password = newPwd;
+                console.log("Password changed successfully");
+            } else {
+                console.log("Old password is wrong");
+            }
+            }
+        }
+        let u = new User("chandru", "hello");
+        u.changePassword("hello", "neymar");
+        u.changePassword("Neymar", "newpass");
+
+        console.log("TASK 3")
+        class Car {
+            #brand;
+            constructor(brand, speed) {
+                this.#brand=brand;
+                this.speed=speed;
+            }
+            getBrand(){
+                return this.#brand;
+            }
+        
+            changeSpeed(value){
+                this.value=this.speed;
+                this.speed += value;
+                console.log(`The car is now going in ${this.speed} from ${this.value}`);
+            }
+        }
+    let cars = new Car("SUBURU", 60);
+    cars.changeSpeed(90);
+    console.log("Car Brand:", cars.getBrand());
+    console.log("Car Speed:", cars.speed);
+
+    cars.brand = "tesla"; 
+    console.log("Car Brand after change:", cars.brand);
+
+        console.log("TASK 4")
+
+    class Calculator {
+        add(...args) {
+            if (args.length === 2) {
+                return args[0] + args[1];
+            }
+
+            if (args.length === 3) {
+                return args[0] + args[1] + args[2];
+            }
+
+            if (args.length === 1 && Array.isArray(args[0])) {
+                return args[0].reduce((sum, n) => sum + n, 0);
+            }
+
+            return "Invalid input";
+        }
+    }
+    let cal = new Calculator();
+    console.log("Add 2 nums:", cal.add(100,200));
+    console.log("Add 3 nums:", cal.add(150,250,350));
+    console.log("Add array:", cal.add([1,2,3,4,5,6]));
+
+    console.log("TASK 5")
+    class Greeting {
+        greet(name, time) {
+            if (arguments.length === 0) {
+                return "Hello!";
+            }
+            if (arguments.length === 1) {
+                return `Hello, ${name}!`;
+            }
+            return `Good ${time}, ${name}!`;
+        }
+    }
+    let g = new Greeting();
+    console.log(g.greet());
+    console.log(g.greet("CHANDRU"));
+    console.log(g.greet("CHANDRU", "Morning"));
+
+    console.log("TASK 6")
+    class Shape {
+    area(a, b,c) {
+        if (arguments.length === 1) {
+            return a*a; 
+        }
+
+        if (arguments.length === 2) {
+            return a*b;
+        }
+        
+        return 0;
+    }
+    }
+
+let sh = new Shape();
+console.log("Square Area:", sh.area(5));
+console.log("Rectangle Area:", sh.area(5, 10));
+
+    console.log("TASK 7")
+    class Animal {
+    speak() {
+        console.log("Animal makes a sound");
+    }
+    }
+    class Dog extends Animal {
+    speak() {
+        console.log("Dog says: Woof!");
+    }
+    }
+    class Cat extends Animal {
+    speak() {
+        console.log("Cat says: Meow!");
+    }
+}
+let dog = new Dog();
+let cat = new Cat();
+dog.speak();
+cat.speak();
+
+    console.log("TASK 8")
+    class Employee {
+    constructor(name, salary) {
+        this.name = name;
+        this.salary = salary;
+    }
+
+    calculateSalary() {
+        return this.salary;
+    }
+    }
+    class Manager extends Employee {
+    constructor(name, salary, bonus) {
+        super(name, salary);
+        this.bonus = bonus;
+    }
+    calculateSalary() {
+        return this.salary + this.bonus;
+    }
+    }
+    let emp = new Employee("Rajesh",30000);
+    let mgr = new Manager("Dinesh",50000,10000);
+    console.log("Employee Salary:",emp.calculateSalary());
+    console.log("Manager Salary:",mgr.calculateSalary());
+
+    console.log("Task 9")
+    class Notification {
+    send(message) {
+        console.log("Notification:", message);
+    }
+    }
+    class EmailNotification extends Notification {
+    send(message) {
+        console.log("Email Sent:", message);
+    }
+    }
+    class SMSNotification extends Notification {    
+    send(message) {
+        console.log("SMS Sent:", message);
+    }
+    }
+    let Note=new Notification();
+    let email = new EmailNotification();
+    let sms = new SMSNotification();
+    Note.send("hello!")
+    email.send("This is zoho, We are welcome you! to join in our company");
+    sms.send("Your plan is expired ! recharge it soon");
+    </script>
+</body>
+</html>
