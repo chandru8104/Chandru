@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log("TASK 1")
+        class person{
+            constructor(name,age){
+                this.name=name;
+                this.age=age;
+            }
+        greet(){
+            console.log(`Hi, my name is ${this.name} and I am ${this.age} years`);
+        }
+        }
+        let p= new person("chandru","21")
+        p.greet();
+        console.log("TASK 2")
+        class student{
+            constructor(name,marks){
+                this.name=name;
+                this.marks=marks
+            }
+        getGrade(){
+            console.log(`your name is: ${this.name}`);
+                if(this.marks>=90){
+                    console.log("Your garde is:A");
+                }
+                else if(this.marks>=75){
+                    console.log("Your garde is:B");
+                }
+                else if(this.marks>=50){
+                    console.log("Your garde is:C");
+                }
+                else{
+                    console.log("Your garde is:F");
+                }
+        }
+        }
+        let stud1=new student("chandru",75);
+        let p1=new student("saravanan",87);
+        let s1 = new student("babuloo",69);
+        stud1.getGrade();
+        p1.getGrade();
+        s1.getGradatha
+        console.log("TASK 3");
+        class bankholder{
+            constructor(accholder,bal){
+                this.accholder=accholder
+                this.bal=bal;
+            }
+            deposit(amount){
+                this.bal+=amount;
+                console.log(`You deposited: ${amount}`);
+            }
+            withdraw(amount){
+                if(amount>this.bal){
+                    console.log(`Insufficient funds`);
+                }
+                else{
+                    this.bal -= amount;
+                    console.log(`You withdrew ${amount}`);
+                }
+            }
+            checkbalance(){
+                console.log(`Your current balance is: ${this.bal}`)
+            }
+        }
+        let p11=new bankholder("chandru",1000);
+        p11.deposit(500);
+        p11.checkbalance();
+        p11.withdraw(1400);
+        p11.checkbalance();
+        p11.withdraw(500);
+
+        console.log("TASK 4");
+        class Car{
+            constructor(brand,model,isAvailable){
+                this.brand=brand;
+                this.model=model;
+                this.isAvailable=true;
+            }
+            rentCar(){
+                this.isAvailable=false;
+                console.log(`This brand: ${this.brand} and model: ${this.model} is not available right now`)
+            }
+            returnCar(){
+                this.isAvailable=true;
+                console.log(`This brand: ${this.brand} and model: ${this.model} is available `)
+            }
+        }
+        let c1=new Car("volkswagen","polo");
+        let c2=new Car("volkswagen","polo GT");
+        let c3=new Car("volkswagen","polo LENGEND");
+        c1.rentCar();
+        c2.rentCar();
+        c3.rentCar();
+        c1.returnCar();
+        c2.returnCar();
+        c3.returnCar();
+
+        console.log("TASK 5")
+        class ShoppingCart{
+            constructor(){
+                this.items=[];
+            }
+            additems(item){
+                this.items.push(item);
+                console.log(`${item.name} added to cart`);
+            }
+            removeItem(itemName){
+                this.items=this.items.filter(item=>this.name!==itemName);
+                console.log(`${itemName} has been removed.`);
+            }
+            getTotalPrice(){
+                let total=this.items.reduce((sum,item)=>sum+item.price,0);
+                return total;
+            }
+        }
+        let s=new ShoppingCart();
+        s.additems({name:"Watch",price:3000});
+        s.additems({name:"laptop",price:15000});
+        s.additems({name:"phone",price:30000});
+        s.removeItem("Watch");
+        console.log("total price is : ", s.getTotalPrice());        
+        
+        console.log("TASK 6")
+        class animal{
+            constructor(name){
+                this.name=name;
+            }
+        speak(){
+            console.log(`${this.name} is making a sound`);
+        }
+        }
+        class dog extends animal{
+            constructor(name,sound){
+                super(name);
+                this.sound = sound;
+            }
+            speak(){
+                super.speak();
+                console.log(`The ${this.name} says ${this.sound}`);
+            }
+        }
+        let d=new dog("buddy","woof");
+        d.speak();
+
+        console.log("TASK 7")
+        class employee{
+            constructor(name,salary){
+                this.name=name;
+                this.salary=salary;
+            }
+            getDetails(){
+            console.log(`Name:${this.name}, Salary:${this.salary}`)
+            }
+        }
+        class manager extends employee{
+            constructor(name,salary,deptinfo){
+                super(name,salary);
+                this.deptinfo=deptinfo;
+            }
+            getDetails(){
+                super.getDetails();
+                console.log(`Department:${this.deptinfo}`);
+            }
+        } 
+        let m= new manager("chandy",30000,"HR")
+        m.getDetails();
+
+        console.log("TASK 8")
+        class shape{
+            getArea(){
+                return 0;
+            }
+        }
+        class rectangle extends shape{
+            constructor(l,b){
+                super();
+                this.l=l;
+                this.b=b;
+            }
+            getArea(){
+                return this.l*this.b
+            }
+        }
+        let a1= new shape();
+        let a2=new rectangle(20,30);
+        console.log(a1.getArea());
+        console.log(a2.getArea());
+
+        console.log("TASK 9")
+        class vehicle{
+            constructor(brand,speed){
+                this.brand=brand;
+                this.speed=speed;
+            }
+            accelerate(value){
+
+                this.speed +=value;
+                console.log(`Your ${this.brand} is now going at ${this.speed}km/h.`);
+
+            }
+        }
+
+        class ElectricCar extends vehicle{
+            constructor(brand,speed,batteryLevel){
+                super(brand,speed);
+                this.batteryLevel=batteryLevel;
+            }
+            chargeBattery(){
+                
+                this.batteryLevel;
+                console.log(`battery charged to ${this.batteryLevel}`);
+            }
+        }
+
+        let c= new ElectricCar("ATHER", "170", 82);
+
+        c.chargeBattery();
+        c.accelerate();
+
+        console.log("Task 10")
+        class user{
+            constructor(username){
+                this.username=username;
+            }
+            login(){
+                console.log(`${this.username} has logged in as user.`)
+            }
+        }
+
+        class Admin extends user{
+            constructor(username){
+                super(username);
+            }
+            login(){
+                console.log(`${this.username} has logged in as admin.`)
+            }
+            deleteUser(username){
+                console.log(`Admin ${this.username} deleted user ${username}`);
+            }
+        }
+
+        let admins=new Admin("chandy");
+        let users=new user("chandru");
+
+        users.login();
+        admins.login();
+        admins.deleteUser("chandru");
+    </script>
+</body>
+</html>
