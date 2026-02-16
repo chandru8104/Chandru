@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+                // Task 1
+function wait2Seconds() {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve("Hello! Message after 2 seconds");
+    }, 2000);
+  });
+}
+
+async function task1() {
+  let result = await wait2Seconds();
+  console.log("Task 1 Output:", result);
+}
+
+//Task 2
+function getUser() {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve({
+        id: 1,
+        name: "Rahul",
+        email: "rahul@gmail.com",
+      });
+    }, 1500);
+  });
+}
+
+async function task2() {
+  let user = await getUser();
+  console.log("\nTask 2 Output:");
+  console.log("User Name:", user.name);
+  console.log("Email:", user.email);
+}
+
+//Task 3
+async function loginUser(isLoggedIn) {
+  if (isLoggedIn === true) {
+    return "Login successful ";
+  } else {
+    throw new Error("Invalid credentials ");
+  }
+}
+
+async function task3() {
+  console.log("\nTask 3 Output:");
+  try {
+    let result = await loginUser(false); // change false to true
+    console.log(result);
+  } catch (error) {
+    console.log("Error:", error.message);
+  }
+}
+
+//Task 4
+function getOrder() {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve("Order received");
+    }, 1000);
+  });
+}
+
+function processOrder() {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve("Order processed");
+    }, 1000);
+  });
+}
+
+function deliverOrder() {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve("Order delivered");
+    }, 1000);
+  });
+}
+
+async function task4() {
+  console.log("\nTask 4 Output:");
+  let step1 = await getOrder();
+  console.log(step1);
+
+  let step2 = await processOrder();
+  console.log(step2);
+
+  let step3 = await deliverOrder();
+  console.log(step3);
+}
+
+//Task 5
+function fetchProducts() {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(["Laptop", "Mobile", "Tablet"]);
+    }, 2000);
+  });
+}
+
+async function task5() {
+  console.log("\nTask 5 Output:");
+  console.log("Loading products...");
+
+  let products = await fetchProducts();
+
+  console.log("Products List:");
+  console.log(products);
+}
+
+async function runAllTasks() {
+  await task1();
+  await task2();
+  await task3();
+  await task4();
+  await task5();
+}
+
+runAllTasks();
+
+    </script>
+</body>
+</html>
