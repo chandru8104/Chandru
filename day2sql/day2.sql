@@ -1,0 +1,103 @@
+create database day1;
+use day1;
+-- task 1 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+create table student(stdid int,sname varchar(20),age int);
+alter table student rename column stdid to SID;
+alter table student rename column sname to SNAME;
+alter table student rename column age to AGE;
+alter table student add dept varchar(10);
+alter table student rename column dept to DNAME;
+alter table student modify SNAME varchar(25);
+show tables;  
+desc student;
+insert into student values (1001,'Hemachandran',21,'MCA');
+insert into student values (1002,'Rajesh',21,'IT');
+insert into student values (1003,'Pradeep',21,'DS');
+insert into student values (1004,'Vishal',21,'AIML');
+insert into student(SID,SNAME) values (1005,'Devanand');
+select * from student;
+select Sid,SNAME from student where sid>=1003;
+drop table student;
+set sql_safe_updates = 0;
+update student set age=20 where sid=1005;
+update student set dname='BCA' where sname='Devanand';
+update student set sname='kaartheeswaran' ,dname='DA' where sid=1002;
+delete from student;
+delete from student where dname="MCA";
+truncate table student;
+----------------------------------------------------------------------------------------------------------------------------------------------------
+-- task 2 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+show tables;
+desc staff;
+create table staff(staff_id int,staff_name varchar(20),phn_no varchar(10),salary decimal(10,2));
+alter table staff add role varchar(10);
+alter table staff drop column role;
+alter table staff rename column staff_id to S_id;
+alter table staff rename column staff_name to S_Name;
+alter table staff rename column phn_no to phno;
+insert into staff values (101,"chandru",1020304050,100000.00);
+insert into staff values (102,"pradeep",1020304051,120000.00);
+insert into staff values (103,"rajesh",1020304502,130000.00);
+insert into staff values (104,"babuloo",1020304053,140000.00);
+insert into staff values (105,"krishnan",1020304054,150000.00);
+insert into staff values (106,"jashu",1020304056,160000.00);
+select * from staff;
+select S_id,S_NAME from staff where s_id>=103;
+drop table staff;
+set sql_safe_updates = 0; 
+delete from staff;
+delete from staff where s_id="103";
+truncate table staff;
+---------------------------------------------------------------------------------------------------------------------------------------------------
+-- task 3 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+desc product;
+create table product(product_id int,product_name varchar(20),rate decimal(10,2));
+alter table product rename column product_id to p_id;
+alter table product rename column product_name to p_Name;
+alter table product rename column rate to price;
+insert into product values (1000,"Smart phone",550000.00);
+insert into product values (1001,"Laptop",960000.00);
+insert into product values (1002,"Earphones",13000.00);
+select * from product;
+select p_id,p_name from product where p_id>=1002;
+drop table product;
+set sql_safe_updates = 0; 
+delete from product;
+delete from product where p_id="1002";
+truncate table product;
+---------------------------------------------------------------------------------------------------------------------------------------------------
+-- task 4 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+desc customer;
+CREATE TABLE customer (customer_id int,name VARCHAR(50),phone VARCHAR(15),city VARCHAR(50));
+alter table  customer rename column customer_id to cid;
+alter table customer rename column name to c_Name;
+alter table customer rename column phone to p_no;
+INSERT INTO Customer VALUES (1, 'chandru', '9876543210', 'Chennai');
+INSERT INTO Customer VALUES (2, 'babuloo', '6756543210', 'madurai');
+INSERT INTO Customer VALUES (3, 'rajesh', '9867543210', 'trichy');
+INSERT INTO Customer VALUES (4, 'prabukanth', '8979543210', 'Chennai');
+select * from customer;
+select cid,c_name from customer where c_id>=2;
+drop table customer;
+set sql_safe_updates = 0; 
+delete from customer;
+delete from customer where cid="1002";
+truncate table customer;
+---------------------------------------------------------------------------------------------------------------------------------------------------
+-- task 5 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+desc emp;
+CREATE TABLE emp(emp_id INT ,ename VARCHAR(50),desg VARCHAR(50),salary DECIMAL(10,2));
+alter table  emp rename column emp_id to eid;
+alter table emp rename column ename to ename;
+alter table emp rename column desg to job;
+INSERT INTO emp VALUES (001, 'chandru', 'HR', 90000.00);
+INSERT INTO emp VALUES (002, 'vishal', 'TL', 85000.00);
+INSERT INTO emp VALUES (003, 'karthick', 'HR', 70000.00);
+INSERT INTO emp VALUES (004, 'dev', 'IT', 80000.00);
+select * from emp;
+select eid,ename from emp where eid>=003;
+drop table emp;
+set sql_safe_updates = 0; 
+delete from emp;
+delete from emp where eid="1002";
+truncate table emp;
